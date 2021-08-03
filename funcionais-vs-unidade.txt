@@ -1,0 +1,3 @@
+1) Testes unitários estão focados em isolar uma regiao de codigo e testa-la separadamente, enquanto testes funcionais focam em fluxos que passam por diversos trechos de codigo
+
+2) Testes unitarios devem ter execucao rapida e devem ser rodados constantemente durante o processo de desenvolvimento, ao passo que testes funcionais geralmente são executados com menos frequência, testando fluxos maiores
