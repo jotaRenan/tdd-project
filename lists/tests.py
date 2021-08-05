@@ -10,7 +10,7 @@ class HomePageTest(TestCase):
 class ListAndItemModelsTest(TestCase):
 
     def test_saving_and_retrieving_items(self):
-        fmy_list = List()
+        my_list = List()
         my_list.save()
 
         first_item = Item()
@@ -45,8 +45,9 @@ class ListViewTest(TestCase):
 
 
     def test_displays_all_items(self):
-        Item.objects.create(text='itemey 1')
-        Item.objects.create(text='itemey 2')
+        my_list = List.objects.create()
+        Item.objects.create(text='itemey 1', list=my_list)
+        Item.objects.create(text='itemey 2', list=my_list)
 
         response = self.client.get('/lists/the-only-list-in-the-world/')
 
