@@ -1,8 +1,9 @@
 from django.core.mail import send_mail
 from django.shortcuts import redirect
-from django.contrib import messages
+from django.contrib import messages, auth
 from accounts.models import Token
 from django.core.urlresolvers import reverse
+import sys
 
 def send_login_email(request):
     email = request.POST['email']
@@ -23,5 +24,6 @@ def send_login_email(request):
     )
     return redirect('/')
 
-def login(_):
-  return redirect('/')
+def login(request):
+    auth.authenticate(uid=request.GET.get('token'))
+    return redirect('/')
